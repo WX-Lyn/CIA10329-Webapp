@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.pdo.model.*"%>
-<%-- 此頁練習採用 EL 的寫法取值 --%>
+<!-- 此頁練習採用 EL 的寫法取值 -->
 
 <%
 PdoService pdoSvc = new PdoService();
@@ -19,6 +19,7 @@ pageContext.setAttribute("list", list);
 		
 		table#table-1 {
 			background-color: #EEE3CB;
+			border: 1px solid #967E76;
 			color: #967E76;
 			text-align: center;
 		}
@@ -141,15 +142,15 @@ pageContext.setAttribute("list", list);
 					<td>${pdoVO.pdoReviewComm}</td>
 					<td>${pdoVO.createdTime}</td>
 					<td>
-					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/emp/emp.do" style="margin-bottom: 0px;">
+					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/pdo/pdo.do" style="margin-bottom: 0px;">
 					     <input type="submit" value="修改">
-					     <input type="hidden" name="pdo_id"  value="${pdoVO.pdoId}">
+					     <input type="hidden" name="pdoId"  value="${pdoVO.pdoId}, ${pdoVO.mebId}, ${pdoVO.pdoDate}">
 					     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 					</td>
 					<td>
-					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/emp/emp.do" style="margin-bottom: 0px;">
+					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/back-end/pdo/pdo.do" style="margin-bottom: 0px;">
 					     <input type="submit" value="刪除">
-					     <input type="hidden" name="pdo_id"  value="${pdoVO.pdoId}">
+					     <input type="hidden" name="pdoId"  value="${pdoVO.pdoId}">
 					     <input type="hidden" name="action" value="delete"></FORM>
 					</td>
 				</tr>

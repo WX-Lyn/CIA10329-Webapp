@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
 <%@ page import="com.pdo.model.*"%>
-<%-- 此頁暫練習採用 Script 的寫法取值 --%>
+<!-- 此頁暫練習採用 Script 的寫法取值 -->
 
 <%
 PdoVO pdoVO = (PdoVO) request.getAttribute("pdoVO"); //EmpServlet.java(Concroller), 存入req的empVO物件
@@ -13,7 +13,7 @@ PdoVO pdoVO = (PdoVO) request.getAttribute("pdoVO"); //EmpServlet.java(Concrolle
 <style>
 table#table-1 {
 	background-color: #EEE3CB;
-	border: 1px solid 967E76;
+	border: 1px solid #967E76;
 	color: #967E76;
 	text-align: center;
 }
@@ -30,18 +30,25 @@ h4 {
 }
 
 table {
-	width: 600px;
+	width: 100%;
 	background-color: white;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	border-radius: 10px;
+}
+
+th {
+	background-color: #EEE3CB;
+	color: #967E76;
+	text-align: center;
 }
 
 table, th, td {
-	border: 1px solid #CCCCFF;
+	border: 1px solid #967E76;
 }
 
 th, td {
-	padding: 5px;
+	padding: 10px;
 	text-align: center;
 }
 
@@ -50,12 +57,26 @@ th, td {
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
+.hover:hover {
+	background-color: #FAF7F0;
+	color: #4A4947;
+	transition: 0.3s;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
 </style>
 
 </head>
 <body bgcolor='white'>
 
-	<h4>此頁暫練習採用 Script 的寫法取值:</h4>
+	<!-- 	<h4>此頁暫練習採用 Script 的寫法取值:</h4> -->
 	<table id="table-1">
 		<tr>
 			<td>
@@ -83,19 +104,19 @@ th, td {
 			<th>訂單評論文字</th>
 			<th>評價建立時間</th>
 		</tr>
-		<tr>
+		<tr class="hover">
 
-			<td><%=pdoVO.getPdoId()%></td>
-			<td><%=pdoVO.getMebId()%></td>
-			<td><%=pdoVO.getPdoDate()%></td>
-			<td><%=pdoVO.getPdTotalPrice()%></td>
-			<td><%=pdoVO.getPdoStatus()%></td>
-			<td><%=pdoVO.getPaymentStatus()%></td>
-			<td><%=pdoVO.getShippingAddr()%></td>
-			<td><%=pdoVO.getShippingMethod()%></td>
-			<td><%=pdoVO.getPdoReviewRate()%></td>
-			<td><%=pdoVO.getPdoReviewComm()%></td>
-			<td><%=pdoVO.getCreatedTime()%></td>
+			<td>${pdoVO.pdoId}</td>
+			<td>${pdoVO.mebId}</td>
+			<td>${pdoVO.pdoDate}</td>
+			<td>${pdoVO.pdTotalPrice}</td>
+			<td>${pdoVO.pdoStatus}</td>
+			<td>${pdoVO.paymentStatus}</td>
+			<td>${pdoVO.shippingAddr}</td>
+			<td>${pdoVO.shippingMethod}</td>
+			<td>${pdoVO.pdoReviewRate}</td>
+			<td>${pdoVO.pdoReviewComm}</td>
+			<td>${pdoVO.createdTime}</td>
 
 		</tr>
 	</table>

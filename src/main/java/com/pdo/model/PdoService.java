@@ -29,13 +29,12 @@ public class PdoService {
 	}
 
 //	public PdoVO updateEmp(Integer pdo_id, Integer meb_id, java.sql.Date pdo_date, Integer pd_total_price, String pdo_status, String payment_status, String shipping_addr, String shipping_method, Integer pdo_review_rate, String pdo_review_comm, java.sql.Date created_time) {
-	public PdoVO updatePdo(Integer pdoId, Integer mebId, java.sql.Date pdoDate, Integer pdTotalPrice, String pdoStatus, String paymentStatus, String shippingAddr, String shippingMethod, Integer pdoReviewRate, String pdoReviewComm, java.sql.Date createdTime) {
-
+	public PdoVO updatePdo(Integer pdTotalPrice, String pdoStatus, String paymentStatus, String shippingAddr, String shippingMethod, Integer pdoReviewRate, String pdoReviewComm, java.sql.Date createdTime) {
+//		Integer pdoId, Integer mebId, java.sql.Date pdoDate,
 		PdoVO pdoVO = new PdoVO();
-
-		pdoVO.setPdoId(pdoId);
-		pdoVO.setMebId(mebId);
-		pdoVO.setPdoDate(pdoDate);
+//		pdoVO.setPdoId(pdoId);
+//		pdoVO.setMebId(mebId);
+//		pdoVO.setPdoDate(pdoDate);
 		pdoVO.setPdTotalPrice(pdTotalPrice);
 		pdoVO.setPdoStatus(pdoStatus);
 		pdoVO.setPaymentStatus(paymentStatus);
@@ -51,8 +50,8 @@ public class PdoService {
 //		dao.delete(empno);
 //	}
 //
-	public PdoVO getOnePdo(Integer pdo_id) {
-		return dao.findByPrimaryKey(pdo_id);
+	public PdoVO getOnePdo(Integer pdoId) {
+		return dao.findByPrimaryKey(pdoId);
 	}
 
 	public List<PdoVO> getAll() {
